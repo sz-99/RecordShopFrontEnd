@@ -1,0 +1,78 @@
+﻿@rendermode InteractiveServer
+<section>
+    <div>
+        <h3>Record Details</h3>
+        <p>Record Name: @Album.Name</p>
+        <p>Artist: @Album.Artist</p>
+        <p>Released: @Album.ReleaseYear</p>
+        <p>Genre: @Album.Genre.ToString()</p>
+    </div>
+    <div>
+        <h4>Edit Record Details</h4>
+        @if (editedAlbum != null)
+        {
+            <div>
+                <label>Update Record Name:</label>
+                <InputText @bind-Value="editedAlbum.Name" class="form-control" />
+            </div>
+            <div>
+                <label>Update Artist:</label>
+                <InputText @bind-Value="editedAlbum.Artist" class="form-control" />
+            </div>
+            <button @onclick="SaveChanges" class="btn btn-primary mt-3">
+                Save Changes
+            </button>
+        }
+        else
+        {
+            <p>Loading record details...</p>
+        }
+    </div>
+    @if (updatedRecord != null)
+    {
+        <div class="mt-4">
+            <h4>Updated Record</h4>
+            <p><strong>Record Name:</strong> @updatedRecord.Name</p>
+            <p><strong>Artist:</strong> @updatedRecord.Artist</p>
+            <p><strong>Released:</strong> @updatedRecord.ReleaseYear</p>
+            <p><strong>Genre:</strong> @updatedRecord.Genre</p>
+        </div>
+    }
+</section>
+
+@code {
+    [Parameter]
+    public Album Album { get; set; }
+
+    private Album editedAlbum;
+    private Album updatedRecord;
+
+    protected override void OnInitialized()
+   
+    {
+     
+        if (Album != null)
+        {
+            editedAlbum = new Album
+                {
+                    Name = Album.Name,
+                    Artist = Album.Artist,
+                    ReleaseYear = Album.ReleaseYear,
+                    Genre = Album.Genre
+                };
+        }
+    }
+
+    private void SaveChanges()
+    {
+        updatedRecord = new Album
+            {
+                Name = editedAlbum.Name,
+                Artist = editedAlbum.Artist,
+                ReleaseYear = editedAlbum.ReleaseYear,
+                Genre = editedAlbum.Genre
+            };
+        Console.WriteLine($"Updated Record: {updatedRecord.Name}, {updatedRecord.Artist}, {updatedRecord.ReleaseYear}, {updatedRecord.Genre}");
+
+    }
+}
