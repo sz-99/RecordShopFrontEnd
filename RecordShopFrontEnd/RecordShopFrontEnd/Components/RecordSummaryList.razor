@@ -1,0 +1,18 @@
+﻿@using RecordShopFrontEnd.Components
+
+
+    <div class="container py-4">
+        <div class="row">
+            @foreach(Album album in Albums)
+            {
+                <RecordSummary Album="album"/>
+            }
+        </div>
+    </div>
+
+
+@code {
+    [Parameter]
+    public List<Album> Albums { get; set; } = new();
+
+}

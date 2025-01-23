@@ -1,10 +1,12 @@
 html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Lucida Sans Typewriter';
+    color:#281e37
 }
 
 a, .btn-link {
     color: #006bb7;
 }
+
 
 .btn-primary {
     color: #fff;
@@ -22,6 +24,9 @@ a, .btn-link {
 
 h1:focus {
     outline: none;
+}
+span {
+    color: #140f1b;
 }
 
 .valid.modified:not([type=checkbox]) {

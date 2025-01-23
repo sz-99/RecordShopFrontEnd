@@ -1,15 +1,25 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page">
+<div class="page" >
     <div class="sidebar">
         <NavMenu />
-    </div>
-    <header class="top-row">
-        <h1>🎶Vinyl Therapy🎧</h1>
-        <p>Spin away your worries here...</p>
+    </div >
+
+    <div class="col-md-9" >
+        <header class="text-center">
+        <h1>
+            <span >
+                🎶Vinyl Therapy🎧
+            </span>
+        </h1>
+        <h3>
+            <span >
+            Spin away your worries here...
+            </span>
+            </h3>
     </header>
 
-    <main>
+        <main class="text-center">
         
         <article>
             @Body
@@ -21,6 +31,7 @@
         <p>&copy; Vinyl Therapy 2025. All Rights Reserved.</p>
         </section>
     </footer>
+    </div>
 </div>
 
 <div id="blazor-error-ui">

@@ -1,0 +1,34 @@
+﻿<h3>RecordsLoader</h3>
+@if(Albums != null)
+{
+    <div>
+    <RecordSummaryList Albums="Albums"/>
+    </div>
+}
+else
+{
+    <p>Loading Records...</p>
+}
+
+@code {
+
+    public string BackendAPI { get; set; } = "https://localhost:7235/";
+    public List<Album> Albums { get; set; }
+    public string? errorMessage;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            HttpClient http = new();
+            var response = http.GetFromJsonAsync<List<Album>>($"{BackendAPI}Albums");
+            if (response != null)
+                Albums = response.Result;
+        }
+        catch(Exception ex)
+        {
+            errorMessage = $"Error: {ex.Message}";
+        }
+    }
+
+}
