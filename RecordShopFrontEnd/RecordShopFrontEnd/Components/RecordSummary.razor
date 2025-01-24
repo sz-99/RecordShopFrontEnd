@@ -1,10 +1,15 @@
-﻿<section>
-    <h3>💿Record Summary💿</h3>
-    <p>Name: @Album.Name</p>
-    <p>Artist: @Album.Artist</p>
-    <p>Released: @Album.ReleaseYear</p>
-</section>
-
+﻿
+<div class="card mb-3 d-flex flex-row align-items-center">
+    <img src="https://plus.unsplash.com/premium_vector-1731582098084-14c1508e20ed?q=80&w=1800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D "
+         alt="Record Thumbnail"
+         class="record-image" 
+        />
+    <div class="card-body">
+        <h2 class="card-title text-primary">💿 @Album.Name</h2>
+        <h4 class="card-subtitle text-secondary mb-3"><em>by @Album.Artist</em></h4>
+        <p class="card-text"><strong>Released:</strong> <span class="text-info">@Album.ReleaseYear</span></p>
+    </div>
+</div>
 @code {
     [Parameter]
     public Album Album { get; set; }

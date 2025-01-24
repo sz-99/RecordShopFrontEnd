@@ -1,0 +1,35 @@
+﻿@rendermode InteractiveServer
+@page "/record/{Id:int}"
+@if(Album!=null)
+{
+    <h1>@Album.Name</h1>
+    <p>Record Id: @Id</p>
+    <RecordDetails Album="Album" />
+}
+else
+{
+    <p>Loading Album...</p>
+}
+@code {
+    [Parameter] 
+    public int Id { get; set; }
+
+    public Album Album { get; set; }
+    public string BackendAPI { get; set; } = "https://localhost:7235/";
+    public string? ErrorMessage;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            HttpClient http = new();
+            var response = http.GetFromJsonAsync<Album>($"{BackendAPI}Albums/{Id}");
+            if (response != null) Album = response.Result;
+        }
+        catch(Exception ex)
+        {
+            ErrorMessage = $"Error: {ex.Message}.";
+        }
+    }
+
+}

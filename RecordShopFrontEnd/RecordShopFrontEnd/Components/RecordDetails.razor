@@ -28,16 +28,7 @@
             <p>Loading record details...</p>
         }
     </div>
-    @if (updatedRecord != null)
-    {
-        <div class="mt-4">
-            <h4>Updated Record</h4>
-            <p><strong>Record Name:</strong> @updatedRecord.Name</p>
-            <p><strong>Artist:</strong> @updatedRecord.Artist</p>
-            <p><strong>Released:</strong> @updatedRecord.ReleaseYear</p>
-            <p><strong>Genre:</strong> @updatedRecord.Genre</p>
-        </div>
-    }
+    
 </section>
 
 @code {
@@ -72,6 +63,7 @@
                 ReleaseYear = editedAlbum.ReleaseYear,
                 Genre = editedAlbum.Genre
             };
+            Album = updatedRecord;
         Console.WriteLine($"Updated Record: {updatedRecord.Name}, {updatedRecord.Artist}, {updatedRecord.ReleaseYear}, {updatedRecord.Genre}");
 
     }

@@ -1,0 +1,62 @@
+﻿/* General card styles */
+.card {
+    border: none;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Layout */
+.card-body {
+    text-align: left;
+}
+
+/* Image styles */
+.record-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 10px;
+}
+
+/* Animation */
+.spinning-image {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Typography */
+.card-title {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.card-subtitle {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #7f8c8d;
+}
+
+.card-text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #34495e;
+}
+
+.text-info {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #2980b9;
+}
