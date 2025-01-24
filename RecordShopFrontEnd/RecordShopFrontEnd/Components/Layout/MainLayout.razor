@@ -1,36 +1,25 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page" >
+<div class="page">
     <div class="sidebar">
         <NavMenu />
-    </div >
+    </div>
 
-    <div class="col-md-9" >
-        <header class="text-center">
-        <h1>
-            <span >
-                🎶Vinyl Therapy🎧
-            </span>
-        </h1>
-        <h3>
-            <span >
-            Spin away your worries here...
-            </span>
-            </h3>
-    </header>
+    <div class="content-container">
+        <header class="header text-center">
+            <h1 class="title">🎶 Vinyl Therapy 🎧</h1>
+            <h3 class="subtitle">Spin away your worries here...</h3>
+        </header>
 
-        <main class="text-center">
-        
-        <article>
-            @Body
-        </article>
-    </main>
+        <main>
+            <article>
+                @Body
+            </article>
+        </main>
 
-    <footer class="footer">
-        <section class="content has-text-centered">
-        <p>&copy; Vinyl Therapy 2025. All Rights Reserved.</p>
-        </section>
-    </footer>
+        <footer class="footer text-center">
+            <p>&copy; Vinyl Therapy 2025. All Rights Reserved.</p>
+        </footer>
     </div>
 </div>
 

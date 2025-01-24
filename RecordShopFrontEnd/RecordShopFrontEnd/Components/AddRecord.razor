@@ -1,0 +1,33 @@
+﻿@rendermode InteractiveServer
+@page "/records/add"
+@inject NavigationManager NavigationManager
+
+<h2>Add a New Record</h2>
+
+
+@code {
+    public string BackendAPI { get; set; } = "https://localhost:7235/";
+    public string? ErrorMessage;
+
+    private async Task HandleValidSubmit(Album album)
+    {
+        try
+        {
+            HttpClient http = new();
+            var response = await http.PostAsJsonAsync($"{BackendAPI}Albums", album);
+            if (response.IsSuccessStatusCode)
+            {
+                NavigationManager.NavigateTo("/");
+            }
+            else
+            {
+                Console.WriteLine("Error Saving Record.");
+            }
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Error: {ex.Message}.";
+        }
+    }
+
+}

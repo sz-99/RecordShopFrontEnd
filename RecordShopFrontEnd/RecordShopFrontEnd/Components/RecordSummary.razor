@@ -1,16 +1,16 @@
 ﻿@using RecordShopFrontEnd.Components
 
 <NavLink href="@($"/record/{Album.Id}")" class="card record-card">
-    <div class="card mb-3 d-flex flex-row align-items-center">
+    <div class="card mb-3 d-flex flex-row align-items-center" text-decoration=none>
     <img src="https://plus.unsplash.com/premium_vector-1731582098084-14c1508e20ed?q=80&w=1800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D "
-         alt="Record Thumbnail"
-         class="record-image"
+         alt="Record Disc"
+         class="record-image spinning-image"
          width="150px"
         />
     <div class="card-body">
         <h2 class="card-title text-primary">💿 @Album.Name</h2>
         <h4 class="card-subtitle text-secondary mb-3"><em>by @Album.Artist</em></h4>
-        <p class="card-text"><strong>Released:</strong> <span class="text-info">@Album.ReleaseYear</span></p>
+        <p class="card-text"><strong>Released:</strong> <span class="text-secondary">@Album.ReleaseYear</span></p>
     </div>
     </div>
 </NavLink>

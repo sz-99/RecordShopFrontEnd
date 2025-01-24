@@ -2,7 +2,7 @@
 .card {
     border: none;
     border-radius: 10px;
-    background-color: #f9f9f9;
+    background-color: #a5907f;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     text-decoration: none;
@@ -49,19 +49,19 @@
 .card-title {
     font-size: 1.75rem;
     font-weight: bold;
-    color: #2c3e50;
+    color: #2e1c07;
 }
 
 .card-subtitle {
     font-size: 1.25rem;
     font-style: italic;
-    color: #7f8c8d;
+    color: #73450d;
 }
 
 .card-text {
     font-size: 1rem;
     font-weight: 500;
-    color: #34495e;
+    color: #2e1c07;
 }
 
 .text-info {

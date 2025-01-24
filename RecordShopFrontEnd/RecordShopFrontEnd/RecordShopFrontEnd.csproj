@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\RecordShopFrontEnd.Client\RecordShopFrontEnd.Client.csproj" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.10" />
+ <Content Update="**\*.razor.css" CopyToOutputDirectory="Never" />
   </ItemGroup>
 
 </Project>
