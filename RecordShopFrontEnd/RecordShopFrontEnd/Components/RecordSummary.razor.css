@@ -1,18 +1,27 @@
-﻿/* General card styles */
+﻿
 .card {
     border: none;
     border-radius: 10px;
     background-color: #f9f9f9;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    text-decoration: none;
+}
+.record-card {
+    text-decoration: none;
 }
 
-/* Layout */
+    .record-card:hover {
+        text-decoration: none;
+    }
+
+
+
 .card-body {
     text-align: left;
 }
 
-/* Image styles */
+
 .record-image {
     width: 150px;
     height: 150px;
@@ -21,7 +30,7 @@
     border-radius: 10px;
 }
 
-/* Animation */
+
 .spinning-image {
     animation: spin 2s linear infinite;
 }
@@ -36,7 +45,7 @@
     }
 }
 
-/* Typography */
+
 .card-title {
     font-size: 1.75rem;
     font-weight: bold;

@@ -7,14 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Components\RecordSummary.razor.css" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Components\RecordSummary.razor.css" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\RecordShopFrontEnd.Client\RecordShopFrontEnd.Client.csproj" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.10" />
   </ItemGroup>
