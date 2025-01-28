@@ -1,20 +1,45 @@
-﻿@rendermode InteractiveServer
+﻿@rendermode InteractiveAuto
 @page "/records/add"
 @inject NavigationManager NavigationManager
 
 <h2>Add a New Record</h2>
+<EditForm FormName="NewRecordForm" Model="@AlbumDto" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator/>
+    <ValidationSummary />
+    <label for="name">Name: </label>
+    <InputText id="name" @bind-Value="AlbumDto.Name" /> <br />
+    <label for="artist">Artist </label>
+    <InputText id="artist" @bind-Value="AlbumDto.Artist" /> <br />
+    <label for="releaseYear">Release Year: </label>
+    <InputNumber id="releaseYear" @bind-Value="AlbumDto.ReleaseYear" /><br />
+    <label for="genre">Genre: </label>
+    <InputSelect id="genre" @bind-Value="AlbumDto.Genre">
+        <option value="0">Pop</option>
+        <option value="1">Rock</option>
+        <option value="2">Country</option>
+        <option value="3">RnB</option>
+        <option value="4">HipHop</option>
+        <option value="5">Jazz</option>
+        <option value="6">Classic</option>
+        <option value="7">Metal</option>
+        </InputSelect><br />
+        <button type="submit">Submit</button>
+
+</EditForm>
 
 
 @code {
+    public AlbumInputDTO AlbumDto { get; set; } = new();
     public string BackendAPI { get; set; } = "https://localhost:7235/";
     public string? ErrorMessage;
 
-    private async Task HandleValidSubmit(Album album)
+    private async Task HandleValidSubmit()
     {
         try
         {
             HttpClient http = new();
-            var response = await http.PostAsJsonAsync($"{BackendAPI}Albums", album);
+            string JsonData = System.Text.Json.JsonSerializer.Serialize(AlbumDto);
+            var response = await http.PostAsJsonAsync($"{BackendAPI}Albums", JsonData);
             if (response.IsSuccessStatusCode)
             {
                 NavigationManager.NavigateTo("/");
